@@ -311,7 +311,7 @@ gst_srt_sink_class_init (GstSRTSinkClass * klass)
 
   /**
    * GstSRTSink::disconnected:
-   * @gstsrtsrc: the srtsink element that emitted this signal
+   * @gstsrtsink: the srtsink element that emitted this signal
    *
    * A socket disconnected
    */
