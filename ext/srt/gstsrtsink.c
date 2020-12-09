@@ -317,7 +317,7 @@ gst_srt_sink_class_init (GstSRTSinkClass * klass)
    */
   signals[SIG_DISCONNECTED] =
       g_signal_new ("disconnected", G_TYPE_FROM_CLASS (klass),
-      G_SIGNAL_RUN_LAST, G_STRUCT_OFFSET (GstSRTSrcClass,
+      G_SIGNAL_RUN_LAST, G_STRUCT_OFFSET (GstSRTSinkClass,
           disconnected), NULL, NULL, NULL, G_TYPE_NONE,
       0);
 
