@@ -56,7 +56,7 @@ struct _GstSRTSinkClass {
 
   void (*caller_added)      (GstSRTSink *self, int sock, GSocketAddress * addr);
   void (*caller_removed)    (GstSRTSink *self, int sock, GSocketAddress * addr);
-  void (*disconnected)      (GstSRTSrc *self);
+  void (*disconnected)      (GstSRTSink *self);
 };
 
 GType gst_srt_sink_get_type (void);
