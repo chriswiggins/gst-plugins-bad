@@ -1315,6 +1315,7 @@ gst_srt_object_read (GstSRTObject * srtobject,
       case SRTS_BROKEN:
       case SRTS_NONEXIST:
       case SRTS_CLOSED:
+        g_signal_emit_by_name (srtobject->element, "disconnected");
         if (connection_mode == GST_SRT_CONNECTION_MODE_LISTENER) {
           /* Caller has been disappeared. */
           return 0;

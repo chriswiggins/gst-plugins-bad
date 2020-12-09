@@ -58,6 +58,7 @@ struct _GstSRTSrcClass {
 
   void (*caller_added)      (GstSRTSrc *self, int sock, GSocketAddress * addr);
   void (*caller_removed)    (GstSRTSrc *self, int sock, GSocketAddress * addr);
+  void (*disconnected)      (GstSRTSrc *self);
 };
 
 GType   gst_srt_src_get_type (void);

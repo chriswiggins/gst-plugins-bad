@@ -56,6 +56,7 @@ enum
 {
   SIG_CALLER_ADDED,
   SIG_CALLER_REMOVED,
+  SIG_DISCONNECTED,
 
   LAST_SIGNAL
 };
@@ -307,6 +308,18 @@ gst_srt_sink_class_init (GstSRTSinkClass * klass)
       G_SIGNAL_RUN_LAST, G_STRUCT_OFFSET (GstSRTSinkClass,
           caller_added), NULL, NULL, NULL, G_TYPE_NONE,
       2, G_TYPE_INT, G_TYPE_SOCKET_ADDRESS);
+
+  /**
+   * GstSRTSink::disconnected:
+   * @gstsrtsrc: the srtsink element that emitted this signal
+   *
+   * A socket disconnected
+   */
+  signals[SIG_DISCONNECTED] =
+      g_signal_new ("disconnected", G_TYPE_FROM_CLASS (klass),
+      G_SIGNAL_RUN_LAST, G_STRUCT_OFFSET (GstSRTSrcClass,
+          disconnected), NULL, NULL, NULL, G_TYPE_NONE,
+      0);
 
   gst_srt_object_install_properties_helper (gobject_class);
 
